@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Today Weather </title>
+
+  <!-- Font + icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" type="image/png" href="./weather.png" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <!-- Left sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="avatar">☁️</div>
+        <div>
+          <div class="small">Welcome</div>
+          <div class="name">User</div>
+        </div>
+      </div>
+
+      <nav class="menu">
+        <button class="menu-btn active"><i class="fa-solid fa-cloud-sun"></i></button>
+        <button class="menu-btn"><i class="fa-solid fa-map-location"></i></button>
+        <button class="menu-btn"><i class="fa-solid fa-calendar-days"></i></button>
+        <button class="menu-btn"><i class="fa-solid fa-gear"></i></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <button id="toggleTheme" title="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Hero -->
+      <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+
+        <!-- search + small controls -->
+        <div class="hero-top">
+          <div class="search">
+            <input id="searchInput" type="text" placeholder="Search city, e.g., Jakarta" />
+            <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button id="locBtn" title="Use my location"><i class="fa-solid fa-location-crosshairs"></i></button>
+          </div>
+          <div class="hero-meta" id="heroMeta">
+            <!-- small meta items (date/time or depth) -->
+          </div>
+        </div>
+
+        <!-- center: big forecast and text -->
+        <div class="hero-body">
+          <div class="weather-left">
+            <div class="label">Weather Forecast</div>
+            <h1 id="headline">Storm with Heavy Rain</h1>
+            <p id="heroDesc">Partly cloudy with occasional showers. Chance of rain 40%.</p>
+
+            <ul class="mini-strip" id="miniStrip">
+              <!-- inline small day temps inserted here -->
+            </ul>
+          </div>
+
+          <aside class="weather-panel" id="weatherPanel">
+            <div class="current-big">
+              <div class="loc" id="panelCity">City</div>
+              <div class="temp-row">
+                <div class="temp" id="panelTemp">10°</div>
+                <div class="cond" id="panelCond">Cloudy</div>
+              </div>
+              <div class="small-cards">
+                <div class="card-sm">
+                  <div class="val" id="panelWind">12 km/h</div>
+                  <div class="lab">Wind</div>
+                </div>
+                <div class="card-sm">
+                  <div class="val" id="panelHumidity">48%</div>
+                  <div class="lab">Humidity</div>
+                </div>
+                <div class="card-sm">
+                  <div class="val" id="panelFeels">11°</div>
+                  <div class="lab">Feels</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="city-list" id="cityList">
+              <!-- other city cards (optional) -->
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Bottom — weekday cards -->
+      <section class="week">
+        <div class="week-inner" id="weekList">
+          <!-- 7-day forecast cards inserted here -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- small toast -->
+  <div id="toast" class="toast"></div>
+</body>
+</html>
